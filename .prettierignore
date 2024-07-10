@@ -1,0 +1,43 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all node_modules folders
+node_modules
+
+# Ignore logs
+logs
+*.log
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore configuration files
+.prettierrc
+.prettierignore
+
+# Ignore specific file types
+*.min.js
+*.map
+
+# Ignore specific files
+package-lock.json
+yarn.lock
+
+# Ignore any .env files
+.env
+.env.*
+
+# Ignore dist folder
+dist
+
+# Ignore public folder (for Create React App)
+public
+
+# Ignore coverage reports
+coverage
+
+# Ignore temporary files
+tmp
+temp
