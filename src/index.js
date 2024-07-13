@@ -1,7 +1,31 @@
-import mongoose from 'mongoose';
-import { DB_NAME } from './constants';
-import express from 'express';
+//step1
+// -- way 1 of importing dotenv -> require('dotenv').config({ path: './env' });
 
+//way 2 of importing dotenv -> using import method
+import dotenv from 'dotenv';
+import express from 'express';
+import connectDB from './db/index.js';
+
+/* step3
+  after this go to package.json and do this : 
+before:
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+after:
+  "scripts": {
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+*/
+
+//step2- configuring the dotenv
+dotenv.config({
+  path: './env',
+});
+
+connectDB();
+
+/* -- USING IIFE(Immediately Invoked Function Expression) 
 const app = express();
 
 //connecting to the databse
@@ -21,3 +45,4 @@ const app = express();
     throw new Error();
   }
 })();
+*/
