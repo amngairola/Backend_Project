@@ -23,7 +23,18 @@ dotenv.config({
   path: './env',
 });
 
-connectDB();
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`Starting server on port :: ${process.env.PORT}`);
+    });
+    app.on('error', (err) => {
+      console.log(`Error: ${err}`);
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 /* -- USING IIFE(Immediately Invoked Function Expression) 
 const app = express();
